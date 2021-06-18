@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="playbackViewModel"
+            type="com.example.beatbox.PlaybackViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/playback_speed_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/playback_speed_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/playback_speed"
+            android:labelFor="@id/playback_speed_seek_bar"
+            android:paddingHorizontal="@dimen/padding_medium"
+            android:paddingTop="@dimen/padding_medium"
+            android:text="@{`Playback speed: ` + playbackViewModel.playbackSpeed + `%`}"
+            app:layout_constraintBottom_toTopOf="@id/playback_speed_seek_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view"
+            tools:text="Playback speed: 50%" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/playback_speed_seek_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:min="1"
+            android:paddingHorizontal="@dimen/padding_medium"
+            android:paddingTop="@dimen/padding_small"
+            android:progress="@{playbackViewModel.playbackSpeed}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

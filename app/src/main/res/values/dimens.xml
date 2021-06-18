@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_micro">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="button_width">100dp</dimen>
+    <dimen name="button_height">100dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="corner_radius_medium">16dp</dimen>
+    <dimen name="stroke_width_medium">4dp</dimen>
+</resources>

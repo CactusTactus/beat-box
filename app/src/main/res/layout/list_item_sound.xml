@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.beatbox.SoundViewModel" />
+    </data>
+
+    <!-- The FrameLayout prevents inner button from stretching inside RecyclerView -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_micro"
+            android:onClick="@{() -> viewModel.onButtonClicked()}"
+            android:text="@{viewModel.title}"
+            android:textSize="16sp"
+            tools:text="Sound name" />
+    </FrameLayout>
+
+</layout>
